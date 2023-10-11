@@ -1,30 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import "./WeatherForecast.css";
+import WeatherForecastDay from "./WeatherForecastDay";
 
 export default function WeatherForecast(props) {
+  let [loaded, setLoaded] = useState(false);
+  let [forecast, setForecast] = useState(false);
+
   function handleResponse(response) {
-    console.log(props);
+    setForecast(response.data.daily);
+    setLoaded(true);
   }
 
-  let apiKey = "o2972aff83bt1a433411747ae6c9e0f0";
-  let city = props.city;
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=imperial`;
-  axios.get(apiUrl).then(handleResponse);
-  return (
-    <div className="WeatherForecast">
-      <div className="row">
-        <div className="col">
-          <div className="forecast-day">Thu</div>
-          <div className="forecast-icon">
-            <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png"></img>
-          </div>
-          <div className="forecast-temp">
-            <span className="forecast-temp-max">19°</span>
-            <span className="forecast-temp-min">10°</span>
+  if (loaded) {
+    console.log(forecast);
+    return (
+      <div className="WeatherForecast">
+        <div className="row">
+          <div className="col">
+            <WeatherForecastDay data={forecast[0]} />
           </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    let apiKey = "o2972aff83bt1a433411747ae6c9e0f0";
+    let city = props.city;
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=imperial`;
+    axios.get(apiUrl).then(handleResponse);
+
+    return null;
+  }
 }
