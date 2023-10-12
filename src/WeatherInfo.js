@@ -1,6 +1,6 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
-import UnitConversion from "./UnitConversion";
+import TempUnit from "./TempUnit";
 
 export default function WeatherInfo(props) {
   return (
@@ -17,7 +17,7 @@ export default function WeatherInfo(props) {
           <div className="d-flex">
             <img src={props.data.iconUrl} alt={props.data.description} />
             <div>
-              <UnitConversion fahrenheit={props.data.temperature} />
+              <TempUnit fahrenheit={props.data.temperature} />
             </div>
           </div>
         </div>
