@@ -1,9 +1,11 @@
 .Weather {
-  border: 1px solid #dadde1;
+  border: 1px solid #fdefff;
   font-family: Arial, Helvetica, sans-serif;
   padding: 16px;
   border-radius: 6px;
-  color: #878787;
+  color: #915e8e;
+  background: #fdefff;
+  box-shadow: 0px 0px 55px 20px rgba(248, 150, 173, 1);
 }
 
 .Weather form {
@@ -51,4 +53,9 @@
   position: relative;
   top: -34px;
   line-height: 1;
+}
+
+.Weather .btn {
+  background: #915e8e;
+  border: #915e8e;
 }

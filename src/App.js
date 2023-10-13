@@ -6,17 +6,17 @@ export default function App() {
     <div className="App">
       <div className="container">
         <Weather defaultCity="Seattle" />
-        <footer>
-          This project was coded by Jen Buskohl and is{" "}
-          <a
-            href="https://github.com/jen-buskohl/react-weather-app"
-            target="_blank"
-            rel="noreferrer"
-          >
-            open-sourced on GitHub
-          </a>
-        </footer>
       </div>
+      <footer>
+        This project was coded by Jen Buskohl and is{" "}
+        <a
+          href="https://github.com/jen-buskohl/react-weather-app"
+          target="_blank"
+          rel="noreferrer"
+        >
+          open-sourced on GitHub
+        </a>
+      </footer>
     </div>
   );
 }
