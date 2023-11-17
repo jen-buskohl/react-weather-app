@@ -17,13 +17,7 @@
 
 body {
   background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/100/211/original/purple-clouds.jpg?1697148547);
-  background-position: fixed;
+  background-attachment: fixed;
   background-size: cover;
   background-color: 0.5;
-}
-
-@media (max-width: 900px) {
-  .App {
-    max-width: 100%;
-  }
 }
